@@ -1,0 +1,2 @@
+refFile=../500WTplasmidfinal.fa;aligner=novo;for i in *_R1_001.fastq.gz; do j=`echo $i | sed 's/_R1_001.fastq.gz//g'`;qsub -N MyAlignment -v command="/home/arawat/plasmid_rarvar/commandWrapper_default.sh $refFile $j $aligner " /home/arawat/bin/generic_low.pbs;done;
+

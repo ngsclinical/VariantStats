@@ -1,0 +1,14 @@
+##PBS -N merge
+#PBS -m ae
+#PBS -j oe
+#PBS -l nodes=1,ncpus=1
+#PBS -l walltime=48:00:00
+#PBS -l mem=2gb
+
+source /home/arawat/bin/pbs_header.sh
+
+require_var command
+
+# Run supplied command.
+# If $touch_error is defined, will create file with defined name on error.
+echo_and_exec "$PBS_O_WORKDIR" "$command" "$touch_on_error"
